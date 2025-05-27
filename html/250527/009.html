@@ -78,30 +78,17 @@
             ]
         const main = document.querySelector('main')
         for (let item of data) {
-            // 요소 생성
             const section = document.createElement('section')
-            const img = document.createElement('img')
-            const h2 = document.createElement('h2')
-            const p = document.createElement('p')
-
-            // 요소 내용 추가
             section.classList.add('product')
-            
-            img.src = item.thumbnailImg
-            img.alt = item.productName
-            img.classList.add('thumbnail')
-            
-            h2.textContent = item.productName
-            h2.classList.add('product-name')
-            h2.classList.add('elipse')
 
-            p.textContent = item.price + '원'
-            p.classList.add('price')
-
-            // 요소 위치 추가
-            section.append(img)
-            section.append(h2)
-            section.append(p)
+            // 코드도 짧아지고 가독성도 좋아집니다.
+            // DOM으로 일일이 컨트롤 했던 것에 비해 단점은
+            // 기존 이벤트 리스너와 같이 어떤 요소에 이벤트가 달려있었다면 텍스트로 변경되는 즉시 이 이벤트가 제거되며, 요소별 접근이 필요할 때에는 다시 querySelector를 사용해야 합니다.
+            section.innerHTML = `
+                <img src="${item.thumbnailImg}" alt="${item.productName}" class="thumbnail">
+                <h2 class="product-name elipse">${item.productName}</h2>
+                <p class="price">${item.price}원</p>
+            `;
 
             main.append(section)
         }
