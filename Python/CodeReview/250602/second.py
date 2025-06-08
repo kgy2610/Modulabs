@@ -120,57 +120,57 @@ c1.list_students()
 # 김철수 (kim@naver.com)
 # 이영희 (lee@gmail.com)
 """
-# class Student:
-#     def __init__(self, name, email):
-#         self.name = name
-#         self.email = email
+class Student:
+    def __init__(self, name, email):
+        self.name = name
+        self.email = email
     
-#     def __str__(self):
-#         # 출력 예시 : 김철수 (kim@naver.com)
-#         return f"{self.name} ({self.email})"
+    def __str__(self):
+        # 출력 예시 : 김철수 (kim@naver.com)
+        return f"{self.name} ({self.email})"
 
-# class Course:
-#     def __init__(self, title, instructor):
-#         self.title = title
-#         self. instructor = instructor
-#         # 수강생 명단
-#         self.students = []
+class Course:
+    def __init__(self, title, instructor):
+        self.title = title
+        self. instructor = instructor
+        # 수강생 명단
+        self.students = []
     
-#     def add_student(self, student):
-#         self.students.append(student)
+    def add_student(self, student):
+        self.students.append(student)
     
-#     def remove_student(self, student):
-#         if student in self.students:
-#             self.students.remove(student)
+    def remove_student(self, student):
+        if student in self.students:
+            self.students.remove(student)
     
-#     def list_students(self):
-#         # Student 클래스의 __str__ 호출
-#         for student in self.students:
-#             print(student)
+    def list_students(self):
+        # Student 클래스의 __str__ 호출
+        for student in self.students:
+            print(student)
 
-# class Platform:
-#     def __init__(self):
-#         # 강의 저장 
-#         self.courses = []
+class Platform:
+    def __init__(self):
+        # 강의 저장 
+        self.courses = []
     
-#     def add_course(self, course):
-#         self.courses.append(course)
+    def add_course(self, course):
+        self.courses.append(course)
 
-#     def list_courses(self):
-#         titles = [course.title for course in self.courses]
-#         print(titles)
+    def list_courses(self):
+        titles = [course.title for course in self.courses]
+        print(titles)
 
-# s1 = Student("김철수", "kim@naver.com")
-# s2 = Student("이영희", "lee@gmail.com")
+s1 = Student("김철수", "kim@naver.com")
+s2 = Student("이영희", "lee@gmail.com")
 
-# c1 = Course("파이썬 입문", "홍강사")
-# c1.add_student(s1)
-# c1.add_student(s2)
+c1 = Course("파이썬 입문", "홍강사")
+c1.add_student(s1)
+c1.add_student(s2)
 
-# p = Platform()
-# p.add_course(c1)
-# p.list_courses()  # ['파이썬 입문']
-# c1.list_students()
+p = Platform()
+p.add_course(c1)
+p.list_courses()  # ['파이썬 입문']
+c1.list_students()
 
 """
 위니브 회의 시간표 정렬

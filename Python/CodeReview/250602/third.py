@@ -10,24 +10,24 @@ return하도록 solution 함수를 완성해주세요.
 둔각 : 90 < angle < 180
 평각 : angle = 180 
 """
-# def solution(angle):
-#     if 0 < angle < 90:
-#         # 예각
-#         return 1
-#     elif angle == 90:
-#         # 직각 
-#         return 2
-#     elif 90 < angle < 180:
-#         # 둔각
-#         return 3
-#     elif angle == 180:
-#         # 평각
-#         return 4
+def solution(angle):
+    if 0 < angle < 90:
+        # 예각
+        return 1
+    elif angle == 90:
+        # 직각 
+        return 2
+    elif 90 < angle < 180:
+        # 둔각
+        return 3
+    elif angle == 180:
+        # 평각
+        return 4
 
-# print(solution(30)) # 예각
-# print(solution(90)) # 직각
-# print(solution(150)) # 둔각
-# print(solution(180)) # 평각
+print(solution(30)) # 예각
+print(solution(90)) # 직각
+print(solution(150)) # 둔각
+print(solution(180)) # 평각
 
 """
 #2번 배열 원소의 길이 
@@ -42,23 +42,23 @@ strlist는 알파벳 소문자, 대문자, 특수문자로 구성되어 있습�
 ["We", "are", "the", "world!"] ->[2, 3, 3, 6]
 ["I", "Love", "Programmers."] -> [1, 4, 12]
 """
-# def solution(strlist):
-#     """
-#     for문으로 리스트에서 문자열을 하나씩 꺼냄,
-#     문자열 길이 계산 후
-#     리스트에 하나씩 추가
-#     """
-#     result = []
-#     for s in strlist:
-#         result.append(len(s))
-#     return result
+def solution(strlist):
+    """
+    for문으로 리스트에서 문자열을 하나씩 꺼냄,
+    문자열 길이 계산 후
+    리스트에 하나씩 추가
+    """
+    result = []
+    for s in strlist:
+        result.append(len(s))
+    return result
 
-# # 리스트 컴프리헨션
-# def solution(strlist):
-#     return [len(s) for s in strlist]
+# 리스트 컴프리헨션
+def solution(strlist):
+    return [len(s) for s in strlist]
 
-# print(solution(["We", "are", "the", "world!"]))
-# print(solution(["I", "Love", "Programmers."]))
+print(solution(["We", "are", "the", "world!"]))
+print(solution(["I", "Love", "Programmers."]))
 
 """
 #3번 
@@ -77,16 +77,16 @@ sides의 길이는 3입니다.
 [1,2,3] -> 2 
 [3,6,2] -> 2
 """
-# def solution(sides):
-#     """
-#     오름차순 정렬, 가장 큰 정수가 맨 뒤 
-#     """
-#     sides.sort()
-#     if sides[2] < sides[0] + sides[1]:
-#         return 1
-#     else:
-#         return 2
+def solution(sides):
+    """
+    오름차순 정렬, 가장 큰 정수가 맨 뒤 
+    """
+    sides.sort()
+    if sides[2] < sides[0] + sides[1]:
+        return 1
+    else:
+        return 2
 
-# print(solution([1, 2, 3]))
-# print(solution([3, 6, 2]))
-# print(solution([3, 4, 5]))
+print(solution([1, 2, 3]))
+print(solution([3, 6, 2]))
+print(solution([3, 4, 5]))
