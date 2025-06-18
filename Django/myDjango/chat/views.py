@@ -1,5 +1,6 @@
 from django.http import HttpRequest, HttpResponse, Http404
 from django.shortcuts import render
+from .models import PuzzleRoom
 
 
 # django view : http 요청을 받아 요청을 처리하는 함수 (Function Based View, FBV)
@@ -47,6 +48,14 @@ def chat_message_new(request: HttpRequest) -> HttpResponse:
 # """
 
 # chat/views.py
+
+def puzzleroom_list(request):
+    # puzzle room 테이블에 있는 모든 레코드를 가져올 준비
+    qs = PuzzleRoom.objects.all()
+    return render(
+        request,
+        template_name="chat/puzzleroom_list.html",
+        context={ "puzzleroom_list": qs })
 
 # chat/urls.py 에서 name 인자를 추출해서
 # View 함수 호출 시에 자동으로 인자를 전달해줍니다.
