@@ -64,13 +64,18 @@ def puzzle_room(request: HttpRequest, name: str) -> HttpResponse:
         image_url = {
             "mario": "/static/chat/mario.jpg",
             "toy": "/static/chat/toy-story.jpg",
+            "openai-1": "/static/chat/openai-1.png",
+            "openai-2": "/static/chat/openai-2.png",
+            "openai-3": "/static/chat/openai-3.png",
+            "openai-4": "/static/chat/openai-4.png",
+            "openai-5": "/static/chat/openai-5.png",
         }[name]
     except KeyError:
         # 위에서 임포트 : from django.http import Http404
         raise Http404(f"not found room : {name}")
-        # return Http404  # return 쓰시면 안 되요 !!
+        # return Http404  # return 쓰시면 안 돼요 !!
 
-    level = 5 # or 4, 5
+    level = 4 # or 4, 5
     # toy, mario, flower, game
     return render(
         request,
