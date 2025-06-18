@@ -1,29 +1,6 @@
-# Git Ignore Rules
-# 일반적으로 무시할 파일들
-*.log
-*.tmp
-*.pma
-*.dat
-*.xml
-*.db
-.DS_Store
-Thumbs.db
-
-# PyCache
-__pycache__/
-*.pyc
-
-# VSCode 설정 파일
-.vscode/
-
-# 시스템 사용자 경로 무시 (필요 시 수정)
-C:/Users/FORYOUCOM/
-
-# 가상환경 (있는 경우)
-venv/
-
+.env*
 .venv
-**/.env*
-**/.env
-db.sqlite3
+venv
+
 __pycache__
+db.sqlite3
