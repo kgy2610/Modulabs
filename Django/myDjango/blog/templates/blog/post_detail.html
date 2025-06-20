@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <title>Blog</title>
+</head>
+<body>
+    <h1>{{ post.title }}</h1>
+
+    {# 장고 템플릿 필터 #}
+    {{ post.content | linebreaks }}
+
+</body>
+</html>
