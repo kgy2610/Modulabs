@@ -1,12 +1,12 @@
+def mysum(a, b):
+    return a + b * 10
 
 
-# white spaces
-# - 눈에 보이지 않는.
+# 위치 인자 (Positioinal Argument)
+print(mysum(1, 2))  # 21
+print(mysum(2, 1))  # 12
 
-# 1) 개행문자 (new line) : '\n' 1글자
-#    Carriage Return    : '\r'
-# 2) 공백문자            : ' '  1글자
-# 3) 탭 문자             : '\t' 1글자   # Escape 문자
-#                         't' 1글자
+# 키워드 인자 (Keyword Argument)
+print(mysum(b=2, a=1))  # 21
 
-# 모든 문자에 대해서는 ascii code 가 있다.
+# 위치 인자가 키워드 인자보다 먼저 지정되어야 합니다.
