@@ -1,0 +1,23 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Review Form</title>
+</head>
+<body>
+    <h1>{{ shop.name }} Review Form</h1>
+
+    <form action="" method="post"
+          enctype="multipart/form-data"
+          novalidate>
+        {% csrf_token %}
+
+        <table>
+          {{ form.as_table }}
+        </table>
+        <input type="submit" value="등록하기"/>
+    </form>
+
+    <br>
+    <a href="/baemin/{{ shop.id }}/"> < 가게로 돌아가기</a>
+</body>
+</html>

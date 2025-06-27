@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>배민 가게 목록</title>
+    <style>
+        body {
+            background-color: whitesmoke;
+            font-family: 'Arial', sans-serif;
+            padding: 30px;
+        }
+        .shop {
+            background-color: #e6f7ff;
+            border: 1px solid #b3e5fc;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        .shop h2 {
+            margin-top: 0;
+        }
+        .shop img {
+            max-width: 300px;
+            height: auto;
+            display: block;
+            margin-bottom: 10px;
+        }
+        a {
+            color: #0288d1;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>🍽 배민 가게 목록</h1>
+
+    {% for shop in shop_list %}
+    <div class="shop">
+        <h2><a href="/baemin/{{ shop.id }}/">{{ shop.name }}</a></h2>
+        <img src="{{ shop.photo.url }}" alt="{{ shop.name }} 사진">
+        <p>{{ shop.description|truncatewords:30 }}</p>
+    </div>
+    {% endfor %}
+</body>
+</html>

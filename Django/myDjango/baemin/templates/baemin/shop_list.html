@@ -1,8 +1,7 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>배민 가게 목록</title>
+
+{% extends "baemin/base.html" %}
+{% load django_bootstrap5 %}
+{% block content %}
     <style>
         body {
             background-color: whitesmoke;
@@ -34,8 +33,6 @@
             text-decoration: underline;
         }
     </style>
-</head>
-<body>
     <h1>🍽 배민 가게 목록</h1>
 
     {% for shop in shop_list %}
@@ -45,5 +42,4 @@
         <p>{{ shop.description|truncatewords:30 }}</p>
     </div>
     {% endfor %}
-</body>
-</html>
+{% endblock %}

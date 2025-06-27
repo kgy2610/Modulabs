@@ -18,10 +18,14 @@ env.read_env(ENV_PATH, overwrite=True)
 SECRET_KEY = 'django-insecure-m@g-y7f$et_l1tqy69fj6$q-l02iqj_ve&)y5#9gzr7*jw%v4)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool("DEBUG", default=False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = env.list(
+    "ALLOWED_HOSTS",
+    default=["127.0.0.1"],
+)
 
+ROOT_URLCONF = 'config.urls'
 
 # Application definition
 
@@ -33,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_bootstrap5',
     # third apps
     'debug_toolbar',
     # local apps
@@ -59,7 +64,11 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        # 장고 앱 외적으로 별도으 ㅣ템플릿을 쓸 경우,
+        # 해당 템플릿 경로를 지정
+        'DIRS': [
+            BASE_DIR / "templates",
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
