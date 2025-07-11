@@ -1,0 +1,26 @@
+<!-- myapp/templates/myapp/person_list.html -->
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>모든 사람 목록</h1>
+    <ul>
+    {% for person in all_persons %}
+        <li>{{ person.first_name }} {{ person.last_name }}</li>
+    {% endfor %}
+    </ul>
+
+    <h2>이름이 'lee'인 사람들</h2>
+    <ul>
+    {% for person in lee_persons %}
+        <li>{{ person.first_name }} {{ person.last_name }}</li>
+    {% endfor %}
+    </ul>
+
+    <h2>이름만 조회</h2>
+    <ul>
+    {% for name in names_only %}
+        <li>{{ name.last_name }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
